@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Virtual environment
+.venv/
+venv/
+env/
+
+# Environment variables
+.env
+
+# Data files
+data/raw/*
+data/sample/*
+*.csv
+*.parquet
+*.xlsx
+
+# Keep folder structure
+!data/raw/.gitkeep
+!data/sample/.gitkeep
+!data/reference/.gitkeep
+
+# dbt
+dbt/nyc_taxi_analytics/target/
+dbt/nyc_taxi_analytics/dbt_packages/
+dbt/nyc_taxi_analytics/logs/
+profiles.yml
+
+# BI files backup
+*.pbix.tmp
+*.twbx.tmp
+
+# OS
+.DS_Store
+Thumbs.db

@@ -8,6 +8,7 @@
 CREATE OR REPLACE TABLE `nyc-taxi-analytics-1.nyc_taxi_staging.rejected_yellow_taxi_trips_2023`
 PARTITION BY pickup_date
 CLUSTER BY source_month, payment_type
+AS
 
 WITH rejected_base AS (
     SELECT
@@ -83,7 +84,7 @@ WITH rejected_base AS (
         is_null_pickup_location_id,
         is_null_dropoff_location_id,
 
-        FROM `nyc-taxi-analytics-1.nyc_taxi_staging.yellow_taxi_trips_2023_cleaning_base`
+        FROM `nyc-taxi-analytics-1.nyc_taxi_staging.stg_yellow_taxi_trips_cleaning_base`
         WHERE
             s_null_pickup_datetime = TRUE
             OR is_null_dropoff_datetime = TRUE
@@ -195,7 +196,7 @@ with_rejection_reasons AS (
                     IF(is_invalid_tip_amount, "is_invalid_tip_amount", NULL),
                     IF(is_invalid_payment_type, "is_invalid_payment_type", NULL),
                     IF(is_null_pickup_location_id, "is_null_pickup_location_id", NULL),
-                    IF(is_null_dropoff_location_id, "is_null_dropoff_location_id", NULL),
+                    IF(is_null_dropoff_location_id, "is_null_dropoff_location_id", NULL)
                 ]) AS reason
                 WHERE reason IS NOT NULL
             ),

@@ -10,6 +10,10 @@ catatan:
 1. passenger_count dan rate_code_id masih float karena ingin melihat nilai raw terlebih dahulu sebelum di standarized
 
 */
+CREATE OR REPLACE TABLE `nyc-taxi-analytics-1.nyc_taxi_staging.stg_yellow_taxi_trips_cleaning_base`
+PARTITION BY pickup_date
+CLUSTER BY pickup_location_id, dropoff_location_id, payment_type
+AS
 
 WITH source_data AS (
     SELECT
@@ -41,7 +45,7 @@ WITH source_data AS (
         SAFE_CAST(congestion_surcharge AS FLOAT64) AS congestion_surcharge,
         SAFE_CAST(airport_fee AS FLOAT64) AS airport_fee
 
-    FROM `your_project_id.nyc_taxi_raw.vw_yellow_taxi_trips_2023_union`
+    FROM `nyc-taxi-analytics-1.nyc_taxi_raw.vw_yellow_taxi_trips_2023_union`
 ),
 
 standardized AS (
@@ -157,12 +161,12 @@ with_labels AS (
         is_source_month_mismatch,
 
         CASE payment_type
-            WHEN 1 THEN 'Credit card'
-            WHEN 2 THEN 'Cash'
-            WHEN 3 THEN 'No charge'
-            WHEN 4 THEN 'Dispute'
-            WHEN 5 THEN 'Unknown'
-            WHEN 6 THEN 'Voided trip'
+            WHEN 0 THEN 'Credit card'
+            WHEN 1 THEN 'Cash'
+            WHEN 2 THEN 'No charge'
+            WHEN 3 THEN 'Dispute'
+            WHEN 4 THEN 'Unknown'
+            WHEN 5 THEN 'Voided trip'
             ELSE 'Invalid or null'
         END AS payment_type_label,
 

@@ -79,12 +79,12 @@ ORDER BY source_month;
 
 -- 5. Rejection Reason Summary
 SELECT
-    rejection_reasons,
-    COUNT(*) AS total_rows,
-FROM `nyc-taxi-analytics-1.nyc_taxi_staging.rejected_yellow_taxi_trips`
-UNNEST(SPLIT(rejection_reasons), ', ') AS rejection_reasons
-GROUP BY rejection_reasons
-ORDER BY rejection_reasons
+    rejection_reason,
+    COUNT(*) AS total_rows
+FROM `nyc-taxi-analytics-1.nyc_taxi_staging.rejected_yellow_taxi_trips`,
+UNNEST(SPLIT(rejection_reasons, ',')) AS rejection_reason
+GROUP BY rejection_reason
+ORDER BY total_rows DESC;
 
 -- 6. Rejected Rows by Months
 SELECT

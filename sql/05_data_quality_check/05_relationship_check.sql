@@ -3,13 +3,13 @@ WITH cleaned_trips AS (
         trip_id,
         pickup_location_id,
         dropoff_location_id
-    FROM `your_project_id.nyc_taxi_staging.stg_yellow_taxi_trips_cleaned`
+    FROM `nyc-taxi-analytics-1.nyc_taxi_staging.stg_yellow_taxi_trips_cleaned`
 ),
 
 zone_lookup AS (
     SELECT
         LocationID AS location_id
-    FROM `your_project_id.nyc_taxi_raw.taxi_zone_lookup`
+    FROM `nyc-taxi-analytics-1.nyc_taxi_raw.taxi_zone_lookup`
 )
 
 SELECT

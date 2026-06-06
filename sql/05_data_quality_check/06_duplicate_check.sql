@@ -25,6 +25,6 @@ WITH duplicate_check AS (
 )
 
 SELECT
-    COUNT(*) AS duplicate_groups,
+    COUNT(*) AS duplicate_group,
     COALESCE(SUM(duplicate_count), 0) AS duplicate_rows
-FROM duplicate_check;
+FROM duplicate_check

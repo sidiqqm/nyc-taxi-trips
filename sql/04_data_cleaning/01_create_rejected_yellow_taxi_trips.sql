@@ -5,7 +5,7 @@
 
 */
 
-CREATE OR REPLACE TABLE `nyc-taxi-analytics-1.nyc_taxi_staging.rejected_yellow_taxi_trips_2023`
+CREATE OR REPLACE TABLE `nyc-taxi-analytics-1.nyc_taxi_staging.rejected_yellow_taxi_trips`
 PARTITION BY pickup_date
 CLUSTER BY source_month, payment_type
 AS

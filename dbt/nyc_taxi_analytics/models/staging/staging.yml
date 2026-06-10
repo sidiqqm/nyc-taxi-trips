@@ -1,0 +1,42 @@
+version: 2
+
+models:
+  - name: stg_yellow_taxi_trips__union
+    description: Unioned staging view for 2023 monthly yellow taxi trip raw tables.
+    columns:
+      - name: source_month
+        description: Month derived from the raw monthly table name.
+        tests:
+          - not_null
+
+      - name: pickup_datetime
+        description: Trip pickup datetime.
+        tests:
+          - not_null
+
+      - name: dropoff_datetime
+        description: Trip dropoff datetime.
+        tests:
+          - not_null
+
+      - name: pickup_location_id
+        description: Pickup taxi zone location ID.
+
+      - name: dropoff_location_id
+        description: Dropoff taxi zone location ID.
+
+  - name: stg_taxi_zone_lookup
+    description: Standardized taxi zone lookup table.
+    columns:
+      - name: location_id
+        tests:
+          - not_null
+          - unique
+
+      - name: borough
+        tests:
+          - not_null
+
+      - name: zone_name
+        tests:
+          - not_null

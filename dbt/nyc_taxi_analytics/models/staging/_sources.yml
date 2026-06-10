@@ -1,0 +1,23 @@
+version: 2
+
+sources:
+  - name: nyc_taxi_raw
+    database: nyc-taxi-analytics-1
+    schema: nyc_taxi_raw
+    description: Raw NYC Taxi data loaded into BigQuery.
+
+    tables:
+      - name: yellow_taxi_trips_2023_01
+      - name: yellow_taxi_trips_2023_02
+      - name: yellow_taxi_trips_2023_03
+      - name: yellow_taxi_trips_2023_04
+      - name: yellow_taxi_trips_2023_05
+      - name: yellow_taxi_trips_2023_06
+      - name: yellow_taxi_trips_2023_07
+      - name: yellow_taxi_trips_2023_08
+      - name: yellow_taxi_trips_2023_09
+      - name: yellow_taxi_trips_2023_10
+      - name: yellow_taxi_trips_2023_11
+      - name: yellow_taxi_trips_2023_12
+
+      - name: taxi_zone_lookup

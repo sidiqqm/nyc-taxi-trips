@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: stg_yellow_taxi_trips__union
+  - name: stg_yellow_taxi_trips_2023_union
     description: Unioned staging view for 2023 monthly yellow taxi trip raw tables.
     columns:
       - name: source_month

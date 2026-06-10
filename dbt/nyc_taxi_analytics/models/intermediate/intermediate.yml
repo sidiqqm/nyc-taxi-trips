@@ -1,0 +1,52 @@
+version: 2
+
+models:
+  - name: int_yellow_taxi_trips_cleaning_base
+    description: Intermediate model containing standardized yellow taxi trips with data quality flags.
+
+  - name: int_yellow_taxi_trips_cleaned
+    description: Cleaned and deduplicated yellow taxi trips ready for mart modelling.
+    columns:
+      - name: trip_id
+        description: Unique trip identifier generated from business columns.
+        tests:
+          - not_null
+          - unique
+
+      - name: pickup_date
+        tests:
+          - not_null
+
+      - name: pickup_datetime
+        tests:
+          - not_null
+
+      - name: dropoff_datetime
+        tests:
+          - not_null
+
+      - name: passenger_count
+        tests:
+          - not_null
+
+      - name: trip_distance
+        tests:
+          - not_null
+
+      - name: fare_amount
+        tests:
+          - not_null
+
+      - name: total_amount
+        tests:
+          - not_null
+
+      - name: payment_type
+        tests:
+          - not_null
+          - accepted_values:
+              values: [0, 1, 2, 3, 4, 5]
+              quote: false
+
+  - name: int_yellow_taxi_trips_rejected
+    description: Rejected yellow taxi records with rejection reasons.

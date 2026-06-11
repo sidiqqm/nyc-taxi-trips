@@ -29,6 +29,6 @@ models:
       +materialized: table
       +schema: marts
 
-      # reporting:
-      #   +materialized: view
-      #   +schema: reporting
+      reporting:
+        +materialized: view
+        +schema: reporting

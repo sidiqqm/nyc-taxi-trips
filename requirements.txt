@@ -1,8 +1,9 @@
 pandas
 numpy
 matplotlib
-seaborn
 jupyter
 google-cloud-bigquery
+google-cloud-bigquery-storage
+pandas-gbq
 db-dtypes
 pyarrow

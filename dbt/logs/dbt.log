@@ -1,0 +1,110 @@
+[0m17:34:56.854867 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7805212aa570>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7805239a7500>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x780521703e30>]}
+
+
+============================== 17:34:56.858087 | 347a06fe-395f-43a3-b6b4-fe0d2c24ac0b ==============================
+[0m17:34:56.858087 [info ] [MainThread]: Running with dbt=1.11.11
+[0m17:34:56.858729 [debug] [MainThread]: running dbt with arguments {'invocation_command': 'dbt init nyc_taxi_analytics', 'version_check': 'True', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'debug': 'False', 'target_path': 'None', 'send_anonymous_usage_stats': 'True', 'printer_width': '80', 'introspect': 'True', 'use_colors': 'True', 'indirect_selection': 'eager', 'static_parser': 'True', 'warn_error': 'None', 'log_cache_events': 'False', 'write_json': 'True', 'log_path': 'logs', 'log_format': 'default', 'partial_parse': 'True', 'fail_fast': 'False', 'empty': 'None', 'use_experimental_parser': 'False', 'profiles_dir': '/home/sidiq/.dbt', 'cache_selected_only': 'False'}
+[0m17:34:56.866609 [info ] [MainThread]: Creating dbt configuration folder at /home/sidiq/.dbt
+[0m17:34:56.867898 [debug] [MainThread]: Starter project path: /home/sidiq/App/nyc-taxi-trip-analytics/.venv/lib/python3.12/site-packages/dbt/include/starter_project
+[0m17:34:56.870041 [info ] [MainThread]: 
+Your new dbt project "nyc_taxi_analytics" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m17:34:56.870661 [info ] [MainThread]: Setting up your profile.
+[0m17:37:31.755463 [info ] [MainThread]: Profile nyc_taxi_analytics written to /home/sidiq/.dbt/profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m17:37:31.757380 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 154.96234, "process_in_blocks": "4408", "process_kernel_time": 0.193269, "process_mem_max_rss": "213608", "process_out_blocks": "80", "process_user_time": 2.64476}
+[0m17:37:31.759006 [debug] [MainThread]: Command `dbt init` succeeded at 17:37:31.758738 after 154.96 seconds
+[0m17:37:31.760278 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7805258ffdd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x780501eccad0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7804fbc56480>]}
+[0m17:37:31.761416 [debug] [MainThread]: Flushing usage events
+[0m17:37:33.175903 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m17:38:16.500754 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7899c3484c20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7899c0f9cd40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7899c1385c40>]}
+
+
+============================== 17:38:16.503980 | cca1fda8-5a6e-4791-8a6a-c66cb9a0e735 ==============================
+[0m17:38:16.503980 [info ] [MainThread]: Running with dbt=1.11.11
+[0m17:38:16.504659 [debug] [MainThread]: running dbt with arguments {'introspect': 'True', 'write_json': 'True', 'debug': 'False', 'indirect_selection': 'eager', 'invocation_command': 'dbt debug', 'use_experimental_parser': 'False', 'cache_selected_only': 'False', 'version_check': 'True', 'log_path': 'logs', 'no_print': 'None', 'partial_parse': 'True', 'empty': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'static_parser': 'True', 'printer_width': '80', 'log_cache_events': 'False', 'profiles_dir': '/home/sidiq/.dbt', 'warn_error': 'None', 'use_colors': 'True', 'quiet': 'False', 'send_anonymous_usage_stats': 'True', 'target_path': 'None', 'log_format': 'default', 'fail_fast': 'False'}
+[0m17:38:16.513129 [info ] [MainThread]: dbt version: 1.11.11
+[0m17:38:16.513634 [info ] [MainThread]: python version: 3.12.3
+[0m17:38:16.514007 [info ] [MainThread]: python path: /home/sidiq/App/nyc-taxi-trip-analytics/.venv/bin/python3
+[0m17:38:16.514367 [info ] [MainThread]: os info: Linux-6.17.0-23-generic-x86_64-with-glibc2.39
+[0m17:38:17.155827 [info ] [MainThread]: Using profiles dir at /home/sidiq/.dbt
+[0m17:38:17.156413 [info ] [MainThread]: Using profiles.yml file at /home/sidiq/.dbt/profiles.yml
+[0m17:38:17.156904 [info ] [MainThread]: Using dbt_project.yml file at /home/sidiq/App/nyc-taxi-trip-analytics/dbt/dbt_project.yml
+[0m17:38:17.157286 [info ] [MainThread]: adapter type: bigquery
+[0m17:38:17.157667 [info ] [MainThread]: adapter version: 1.11.1
+[0m17:38:17.158035 [info ] [MainThread]: Configuration:
+[0m17:38:17.158403 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m17:38:17.158847 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m17:38:17.159226 [info ] [MainThread]: Required dependencies:
+[0m17:38:17.159582 [debug] [MainThread]: Executing "git --help"
+[0m17:38:17.161301 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--config-env=<name>=<envvar>] <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m17:38:17.161782 [debug] [MainThread]: STDERR: "b''"
+[0m17:38:17.162237 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m17:38:17.162674 [info ] [MainThread]: Connection:
+[0m17:38:17.163039 [info ] [MainThread]:   method: oauth
+[0m17:38:17.163374 [info ] [MainThread]:   database: nyc-taxi-analytics-1
+[0m17:38:17.163698 [info ] [MainThread]:   execution_project: nyc-taxi-analytics-1
+[0m17:38:17.164029 [info ] [MainThread]:   schema: nyc_taxi_dbt
+[0m17:38:17.164336 [info ] [MainThread]:   location: US
+[0m17:38:17.164628 [info ] [MainThread]:   priority: interactive
+[0m17:38:17.164926 [info ] [MainThread]:   maximum_bytes_billed: None
+[0m17:38:17.165223 [info ] [MainThread]:   impersonate_service_account: None
+[0m17:38:17.165513 [info ] [MainThread]:   job_retry_deadline_seconds: None
+[0m17:38:17.165798 [info ] [MainThread]:   job_retries: 1
+[0m17:38:17.166075 [info ] [MainThread]:   job_creation_timeout_seconds: None
+[0m17:38:17.166371 [info ] [MainThread]:   job_execution_timeout_seconds: 300
+[0m17:38:17.166651 [info ] [MainThread]:   timeout_seconds: 300
+[0m17:38:17.166931 [info ] [MainThread]:   client_id: None
+[0m17:38:17.167223 [info ] [MainThread]:   token_uri: None
+[0m17:38:17.167528 [info ] [MainThread]:   compute_region: None
+[0m17:38:17.167933 [info ] [MainThread]:   dataproc_cluster_name: None
+[0m17:38:17.168267 [info ] [MainThread]:   gcs_bucket: None
+[0m17:38:17.168583 [info ] [MainThread]:   dataproc_batch: None
+[0m17:38:17.169125 [info ] [MainThread]: Registered adapter: bigquery=1.11.1
+[0m17:38:17.324486 [debug] [MainThread]: Acquiring new bigquery connection 'debug'
+[0m17:38:17.324996 [debug] [MainThread]: On debug: select 1 as id
+[0m17:38:17.325489 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m17:38:20.326831 [debug] [MainThread]: BigQuery adapter: Got an error when attempting to create a bigquery " "client: 'Runtime Error
+  Failed to authenticate with supplied credentials
+  error:
+  Your default credentials were not found. To set up Application Default Credentials, see https://cloud.google.com/docs/authentication/external/set-up-adc for more information.'
+[0m17:38:20.328124 [debug] [MainThread]: BigQuery adapter: Unhandled error while running:
+select 1 as id
+[0m17:38:20.329017 [debug] [MainThread]: BigQuery adapter: Database Error
+  Runtime Error
+    Failed to authenticate with supplied credentials
+    error:
+    Your default credentials were not found. To set up Application Default Credentials, see https://cloud.google.com/docs/authentication/external/set-up-adc for more information.
+[0m17:38:20.329880 [info ] [MainThread]:   Connection test: [[31mERROR[0m]
+
+[0m17:38:20.330893 [info ] [MainThread]: [31m2 checks failed:[0m
+[0m17:38:20.331759 [info ] [MainThread]: Project loading failed for the following reason:
+ project path </home/sidiq/App/nyc-taxi-trip-analytics/dbt/dbt_project.yml> not found
+
+[0m17:38:20.332763 [info ] [MainThread]: dbt was unable to connect to the specified database.
+The database returned the following error:
+
+  >'NoneType' object has no attribute 'close'
+
+Check your database credentials and try again. For more information, visit:
+https://docs.getdbt.com/docs/configure-your-profile
+
+
+[0m17:38:20.334142 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 3.8943048, "process_in_blocks": "56", "process_kernel_time": 0.235175, "process_mem_max_rss": "216416", "process_out_blocks": "32", "process_user_time": 2.834069}
+[0m17:38:20.335304 [debug] [MainThread]: Command `dbt debug` failed at 17:38:20.335047 after 3.90 seconds
+[0m17:38:20.336299 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7899c1489df0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78999b33e8d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7899a0ae9cd0>]}
+[0m17:38:20.337674 [debug] [MainThread]: Flushing usage events
+[0m17:38:21.715589 [debug] [MainThread]: An error was encountered while trying to flush usage events

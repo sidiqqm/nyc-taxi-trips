@@ -1,0 +1,49 @@
+version: 2
+
+models:
+  - name: rpt_kpi_overview
+    description: KPI overview for NYC Yellow Taxi dashboard.
+
+  - name: rpt_monthly_demand_revenue
+    description: Monthly demand and revenue trend with month-over-month growth.
+
+  - name: rpt_peak_hour_analysis
+    description: Demand and revenue performance by pickup hour.
+
+  - name: rpt_location_performance
+    description: Pickup location performance by trips, revenue, and contribution.
+
+  - name: rpt_payment_behavior
+    description: Payment behavior analysis by payment type.
+
+  - name: vw_yellow_taxi_dashboard_analytics
+    description: Dashboard-ready wide analytics view for Power BI or Tableau.
+    columns:
+      - name: trip_id
+        tests:
+          - not_null
+          - unique
+
+      - name: pickup_date
+        tests:
+          - not_null
+
+      - name: pickup_year_month
+        tests:
+          - not_null
+
+      - name: pickup_borough
+        tests:
+          - not_null
+
+      - name: pickup_zone
+        tests:
+          - not_null
+
+      - name: payment_type_name
+        tests:
+          - not_null
+
+      - name: total_amount
+        tests:
+          - not_null

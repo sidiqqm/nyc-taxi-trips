@@ -108,7 +108,7 @@ fact_ready AS (
         dropoff_location_id,
 
         payment_type AS payment_type_id,
-        payment_type_label,
+        payment_type_label AS payment_type_name,
 
         fare_amount,
         extra,
@@ -182,7 +182,7 @@ SELECT
     dropoff_location_id,
 
     payment_type_id,
-    payment_type_label,
+    payment_type_name,
 
     fare_amount,
     extra,

@@ -134,12 +134,12 @@ with_labels AS (
         is_source_month_mismatch,
 
         CASE payment_type
-            WHEN 0 THEN 'Credit card'
-            WHEN 1 THEN 'Cash'
-            WHEN 2 THEN 'No charge'
-            WHEN 3 THEN 'Dispute'
-            WHEN 4 THEN 'Unknown'
-            WHEN 5 THEN 'Voided trip'
+            WHEN 0 THEN 'Flex fare'
+            WHEN 1 THEN 'Credit card'
+            WHEN 2 THEN 'Cash'
+            WHEN 3 THEN 'No charge'
+            WHEN 4 THEN 'Dispute'
+            WHEN 5 THEN 'Unknown'
             ELSE 'Invalid or null'
         END AS payment_type_label,
 

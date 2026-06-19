@@ -1,0 +1,48 @@
+[0m00:54:23.092356 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x794736096000>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x794735a947a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x794736095d30>]}
+
+
+============================== 00:54:23.095721 | 50a2b3dc-09af-4712-8fa6-cf9fb2243cb3 ==============================
+[0m00:54:23.095721 [info ] [MainThread]: Running with dbt=1.11.11
+[0m00:54:23.096458 [debug] [MainThread]: running dbt with arguments {'invocation_command': 'dbt run', 'log_cache_events': 'False', 'empty': 'False', 'cache_selected_only': 'False', 'use_colors': 'True', 'profiles_dir': '/home/sidiq/.dbt', 'use_experimental_parser': 'False', 'quiet': 'False', 'introspect': 'True', 'send_anonymous_usage_stats': 'True', 'log_path': 'logs', 'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'partial_parse': 'True', 'target_path': 'None', 'fail_fast': 'False', 'debug': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'log_format': 'default', 'printer_width': '80', 'indirect_selection': 'eager', 'warn_error': 'None', 'write_json': 'True'}
+[0m00:54:23.097080 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /home/sidiq/App/nyc-taxi-trip-analytics/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m00:54:23.098048 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.070814155, "process_in_blocks": "43984", "process_kernel_time": 0.190291, "process_mem_max_rss": "120324", "process_out_blocks": "8", "process_user_time": 3.247973}
+[0m00:54:23.098563 [debug] [MainThread]: Command `dbt run` failed at 00:54:23.098445 after 0.07 seconds
+[0m00:54:23.098967 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7947355f92e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7947352b6e70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79473acffda0>]}
+[0m00:54:23.099380 [debug] [MainThread]: Flushing usage events
+[0m00:54:25.051171 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m00:55:09.154378 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e657da1b020>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e657dbc2630>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e657ed52480>]}
+
+
+============================== 00:55:09.157596 | c7622b76-fcd8-4370-8903-548668ec94fa ==============================
+[0m00:55:09.157596 [info ] [MainThread]: Running with dbt=1.11.11
+[0m00:55:09.158226 [debug] [MainThread]: running dbt with arguments {'fail_fast': 'False', 'partial_parse': 'True', 'debug': 'False', 'invocation_command': 'dbt clean', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'static_parser': 'True', 'log_cache_events': 'False', 'target_path': 'None', 'use_experimental_parser': 'False', 'empty': 'None', 'write_json': 'True', 'log_path': 'logs', 'profiles_dir': '/home/sidiq/.dbt', 'version_check': 'True', 'log_format': 'default', 'indirect_selection': 'eager', 'introspect': 'True', 'no_print': 'None', 'use_colors': 'True', 'printer_width': '80', 'warn_error': 'None', 'cache_selected_only': 'False'}
+[0m00:55:09.158923 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /home/sidiq/App/nyc-taxi-trip-analytics/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m00:55:09.159805 [debug] [MainThread]: Resource report: {"command_name": "clean", "command_success": false, "command_wall_clock_time": 0.065385014, "process_in_blocks": "0", "process_kernel_time": 0.119996, "process_mem_max_rss": "120060", "process_out_blocks": "16", "process_user_time": 2.49993}
+[0m00:55:09.160285 [debug] [MainThread]: Command `dbt clean` failed at 00:55:09.160185 after 0.07 seconds
+[0m00:55:09.160665 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e657d183320>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e657e2a8470>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7e657c64ec00>]}
+[0m00:55:09.161062 [debug] [MainThread]: Flushing usage events
+[0m00:55:10.619630 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m04:08:54.499561 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x713a4d3f1ac0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x713a4d239a00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x713a4d5e27e0>]}
+
+
+============================== 04:08:54.502740 | 6cff9ae0-7975-4ad3-bf67-5e0ba558c931 ==============================
+[0m04:08:54.502740 [info ] [MainThread]: Running with dbt=1.11.11
+[0m04:08:54.503367 [debug] [MainThread]: running dbt with arguments {'write_json': 'True', 'invocation_command': 'dbt run', 'log_cache_events': 'False', 'debug': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'introspect': 'True', 'log_path': 'logs', 'static_parser': 'True', 'warn_error': 'None', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'indirect_selection': 'eager', 'quiet': 'False', 'version_check': 'True', 'profiles_dir': '/home/sidiq/.dbt', 'use_colors': 'True', 'printer_width': '80', 'cache_selected_only': 'False', 'log_format': 'default', 'empty': 'False', 'use_experimental_parser': 'False', 'fail_fast': 'False', 'no_print': 'None'}
+[0m04:08:54.503920 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /home/sidiq/App/nyc-taxi-trip-analytics/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m04:08:54.504786 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.068371475, "process_in_blocks": "43984", "process_kernel_time": 0.15698, "process_mem_max_rss": "120364", "process_out_blocks": "8", "process_user_time": 2.813574}
+[0m04:08:54.505379 [debug] [MainThread]: Command `dbt run` failed at 04:08:54.505278 after 0.07 seconds
+[0m04:08:54.505797 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x713a4d054a70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x713a4c7269f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x713a4ca7d0a0>]}
+[0m04:08:54.506246 [debug] [MainThread]: Flushing usage events
+[0m04:08:56.166391 [debug] [MainThread]: An error was encountered while trying to flush usage events

@@ -1,10 +1,13 @@
+-- buat quartile dari trip distance, trip_duration, fare amount, fare per mile, dan tip rate
+-- tentuin iqr, batas bawah dan batas atas
+
 WITH quantiles AS (
     SELECT
         APPROX_QUANTILES(trip_distance, 100)[OFFSET(25)] AS q1_trip_distance,
         APPROX_QUANTILES(trip_distance, 100)[OFFSET(75)] AS q3_trip_distance,
 
-        APPROX_QUANTILES(trip_duration_minutes, 100)[OFFSET(25)] AS q1_trip_duration,
-        APPROX_QUANTILES(trip_duration_minutes, 100)[OFFSET(75)] AS q3_trip_duration,
+        APPROX_QUANTILES(trip_duration, 100)[OFFSET(25)] AS q1_trip_duration,
+        APPROX_QUANTILES(trip_duration, 100)[OFFSET(75)] AS q3_trip_duration,
 
         APPROX_QUANTILES(fare_amount, 100)[OFFSET(25)] AS q1_fare_amount,
         APPROX_QUANTILES(fare_amount, 100)[OFFSET(75)] AS q3_fare_amount,
@@ -16,9 +19,9 @@ WITH quantiles AS (
         APPROX_QUANTILES(fare_per_mile, 100)[OFFSET(75)] AS q3_fare_per_mile,
 
         APPROX_QUANTILES(tip_rate, 100)[OFFSET(25)] AS q1_tip_rate,
-        APPROX_QUANTILES(tip_rate, 100)[OFFSET(75)] AS q3_tip_rate
+        APPROX_QUANTILES(tip_rate, 100)[OFFSET(75)] AS q3_tip_rate,
 
-    FROM `your_project_id.nyc_taxi_dbt_marts.fact_yellow_taxi_trips`
+    FROM `nyc-taxi-analytics-1.nyc_taxi_dbt_marts.fact_yellow_taxi_trips`
 ),
 
 thresholds AS (
@@ -39,7 +42,7 @@ thresholds AS (
         q3_fare_amount,
         q3_fare_amount - q1_fare_amount AS iqr_fare_amount,
         q1_fare_amount - 1.5 * (q3_fare_amount - q1_fare_amount) AS lower_fare_amount,
-        q3_fare_amount + 1.5 * (q3_fare_amount - q1_fare_amount) AS upper_fare_amount,
+        q3_fare_amount + 1.5 * (q3_fare_amount -  q1_fare_amount) AS upper_fare_amount
 
         q1_total_amount,
         q3_total_amount,
@@ -63,5 +66,40 @@ thresholds AS (
 )
 
 SELECT
-    *
+    q1_trip_distance,
+    q3_trip_distance,
+    iqr_trip_distance,
+    lower_trip_distance,
+    upper_trip_distance,
+
+    q1_trip_duration,
+    q3_trip_duration,
+    iqr_trip_duration,
+    lower_trip_duration,
+    upper_trip_duration,
+
+    q1_fare_amount,
+    q3_fare_amount,
+    iqr_fare_amount,
+    lower_fare_amount,
+    upper_fare_amount
+
+    q1_total_amount,
+    q3_total_amount,
+    iqr_total_amount,
+    lower_total_amount,
+    upper_total_amount,
+
+    q1_fare_per_mile,
+    q3_fare_per_mile,
+    iqr_fare_per_mile,
+    lower_fare_per_mile,
+    upper_fare_per_mile,
+
+    q1_tip_rate,
+    q3_tip_rate,
+    iqr_tip_rate,
+    lower_tip_rate,
+    upper_tip_rate
+    
 FROM thresholds;

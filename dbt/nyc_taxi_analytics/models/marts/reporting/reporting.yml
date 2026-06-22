@@ -47,3 +47,50 @@ models:
       - name: total_amount
         tests:
           - not_null
+          
+  - name: rpt_daily_demand
+    description: Daily taxi demand model with daily growth and 7-day moving average.
+    columns:
+    - name: pickup_date
+      tests:
+        - not_null
+        - unique
+
+    - name: total_trips
+      tests:
+        - not_null
+
+  - name: rpt_day_of_week_demand
+    description: Taxi demand performance by day of week.
+    columns:
+      - name: day_of_week
+        tests:
+          - not_null
+          - unique
+
+      - name: avg_trips_per_day
+        tests:
+          - not_null
+
+  - name: rpt_hourly_demand
+    description: Taxi demand performance by pickup hour.
+    columns:
+      - name: pickup_hour
+        tests:
+          - not_null
+          - unique
+
+      - name: total_trips
+        tests:
+          - not_null
+
+  - name: rpt_demand_heatmap
+    description: Demand pattern by day of week and pickup hour.
+    columns:
+      - name: day_of_week
+        tests:
+          - not_null
+
+      - name: pickup_hour
+        tests:
+          - not_null

@@ -1,6 +1,3 @@
--- buat quartile dari trip distance, trip_duration, fare amount, fare per mile, dan tip rate
--- tentuin iqr, batas bawah dan batas atas
-
 WITH quantiles AS (
     SELECT
         APPROX_QUANTILES(trip_distance, 100)[OFFSET(25)] AS q1_trip_distance,

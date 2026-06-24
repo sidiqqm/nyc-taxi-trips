@@ -14,7 +14,7 @@ hours AS (
     SELECT
         hour_value AS pickup_hour
     FROM UNNEST(GENERATE_ARRAY(0, 23)) AS hour_value
-)
+),
 
 daily_hourly_grid AS (
     SELECT
@@ -28,7 +28,7 @@ daily_hourly_grid AS (
     FROM calendar c
     CROSS JOIN hours h
 
-    LEFT JOIN {{ref('fact_yellow_taxi_trips')}}
+    LEFT JOIN {{ref('fact_yellow_taxi_trips')}} f
         ON c.full_date = f.pickup_date
         AND h.pickup_hour = f.pickup_hour
     
@@ -38,7 +38,7 @@ daily_hourly_grid AS (
         c.day_name,
         c.is_weekend,
         h.pickup_hour
-)
+),
 
 heatmap_metrics AS (
     SELECT

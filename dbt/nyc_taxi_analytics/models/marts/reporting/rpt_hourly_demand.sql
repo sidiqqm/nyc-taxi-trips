@@ -1,11 +1,3 @@
-"""
-
-Jam berapa demand tertinggi?
-Apakah jam dengan demand tertinggi sama dengan revenue tertinggi?
-Apakah late night memiliki trip lebih sedikit tetapi revenue per trip lebih tinggi?
-
-"""
-
 {{ config(materialized='view') }}
 
 WITH hours AS (
@@ -48,7 +40,7 @@ hourly_metrics AS (
 
     FROM hours h
 
-    LEFT JOIN {{ ref('fact_yellow_taxi_trips') }} AS fact f
+    LEFT JOIN {{ ref('fact_yellow_taxi_trips') }} f
         ON h.pickup_hour = f.pickup_hour
 
     GROUP BY

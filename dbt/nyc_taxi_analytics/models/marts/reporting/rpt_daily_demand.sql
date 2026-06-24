@@ -1,11 +1,3 @@
-"""
-Tujuan : 
-    Bagaimana demand berubah setiap hari?
-    Apakah terdapat lonjakan atau penurunan demand tertentu?
-    Apakah demand harian stabil?
-    Bagaimana tren demand setelah dihaluskan dengan moving average?
-"""
-
 {{ config(materialized='view') }}
 
 WITH calendar AS (

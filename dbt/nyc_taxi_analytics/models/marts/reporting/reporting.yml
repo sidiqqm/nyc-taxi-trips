@@ -94,3 +94,82 @@ models:
       - name: pickup_hour
         tests:
           - not_null
+
+  - name: rpt_pickup_location_performance
+    description: Pickup-zone performance by demand, revenue, trip behavior, and contribution.
+    columns:
+      - name: pickup_location_id
+        tests:
+          - not_null
+          - unique
+
+      - name: total_trips
+        tests:
+          - not_null
+
+      - name: total_revenue
+        tests:
+          - not_null
+
+  - name: rpt_dropoff_location_performance
+    description: Dropoff-zone performance by trip arrivals and revenue.
+    columns:
+      - name: dropoff_location_id
+        tests:
+          - not_null
+          - unique
+
+      - name: total_trips
+        tests:
+          - not_null
+
+  - name: rpt_borough_flow_performance
+    description: Directed borough-to-borough taxi trip flow analysis.
+    columns:
+      - name: pickup_borough
+        tests:
+          - not_null
+
+      - name: dropoff_borough
+        tests:
+          - not_null
+
+      - name: total_trips
+        tests:
+          - not_null
+
+  - name: rpt_route_performance
+    description: Directed pickup-to-dropoff route performance by demand, revenue, and trip behavior.
+    columns:
+      - name: pickup_location_id
+        tests:
+          - not_null
+
+      - name: dropoff_location_id
+        tests:
+          - not_null
+
+      - name: route_name
+        tests:
+          - not_null
+
+      - name: total_trips
+        tests:
+          - not_null
+
+  - name: rpt_location_role_comparison
+    description: Comparison of pickup and dropoff roles for every taxi zone.
+    columns:
+      - name: location_id
+        tests:
+          - not_null
+          - unique
+
+      - name: location_role
+        tests:
+          - not_null
+          - accepted_values:
+              values:
+                - Net pickup origin
+                - Net dropoff destination
+                - Balanced location role

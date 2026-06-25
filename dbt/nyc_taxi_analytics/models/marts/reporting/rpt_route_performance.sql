@@ -55,3 +55,82 @@ WITH route_metrics AS (
         route_name,
         route_type
 ),
+
+ranked_routes AS (
+    SELECT
+        pickup_location_id,
+        pickup_borough,
+        pickup_zone_name,
+        pickup_full_location_name,
+
+        dropoff_location_id,
+        dropoff_borough,
+        dropoff_zone_name,
+        dropoff_full_location_name,
+
+        route_name,
+        route_type,
+        total_trips,
+        total_revenue,
+        total_fare,
+        total_tip,
+
+        avg_revenue_per_trip,
+        avg_fare_per_trip,
+        avg_trip_distance,
+        avg_trip_duration_minutes,
+
+        DENSE_RANK() OVER(
+            ORDER BY total_trips DESC
+        ) AS demand_rank,
+
+        DENSE_RANK()  OVER(
+            ORDER BY total_revenue
+        ) AS revenue_rank,
+
+        ROUND(
+            SAFE_DIVIDE(
+                total_trips,
+                SUM(total_trips) OVER()
+            ) * 100, 2
+        ) AS trip_share_percentage
+
+        ROUND(
+            SAFE_DIVIDE(
+                total_revenue,
+                SUM(total_revenue) OVER()
+            ) * 100, 2
+        ) AS revenue_share_percentage
+
+    FROM route_metrics
+)
+
+SELECT
+    pickup_location_id,
+    pickup_borough,
+    pickup_zone_name,
+    pickup_full_location_name,
+
+    dropoff_location_id,
+    dropoff_borough,
+    dropoff_zone_name,
+    dropoff_full_location_name,
+
+    route_name,
+    route_type,
+    total_trips,
+    total_revenue,
+    total_fare,
+    total_tip,
+
+    avg_revenue_per_trip,
+    avg_fare_per_trip,
+    avg_trip_distance,
+    avg_trip_duration_minutes,
+    
+    demand_rank,
+    trip_share_percentage,
+    revenue_rank,
+    revenue_share_percentage
+FROM route_metrics
+    

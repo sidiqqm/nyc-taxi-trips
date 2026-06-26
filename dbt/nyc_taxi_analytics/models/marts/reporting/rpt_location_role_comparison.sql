@@ -42,10 +42,10 @@ combined_metrics AS (
 
     FROM {{ ref('dim_location') }} l
 
-    LEFT JOIN pu
+    LEFT JOIN pickup_metrics AS pu
         ON l.location_id = pu.location_id
 
-    LEFT JOIN do
+    LEFT JOIN dropoff_metrics AS do
         ON l.location_id = do.location_id
 )
 

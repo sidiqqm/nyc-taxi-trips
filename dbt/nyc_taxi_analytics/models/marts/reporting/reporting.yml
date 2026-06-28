@@ -241,3 +241,64 @@ models:
       - name: total_trips
         tests:
           - not_null
+
+  - name: rpt_payment_behavior
+    description: Payment type distribution, trip value, and recorded tip metrics.
+    columns:
+      - name: payment_type_id
+        tests:
+          - not_null
+          - unique
+
+      - name: payment_type_name
+        tests:
+          - not_null
+
+      - name: total_trips
+        tests:
+          - not_null
+
+  - name: rpt_payment_time_behavior
+    description: Payment behavior by pickup time period.
+    columns:
+      - name: pickup_time_period
+        tests:
+          - not_null
+
+      - name: payment_type_id
+        tests:
+          - not_null
+
+      - name: total_trips
+        tests:
+          - not_null
+
+  - name: rpt_payment_pickup_location_behavior
+    description: Payment behavior by pickup zone.
+    columns:
+      - name: pickup_location_id
+        tests:
+          - not_null
+
+      - name: payment_type_id
+        tests:
+          - not_null
+
+      - name: total_trips
+        tests:
+          - not_null
+
+  - name: rpt_credit_card_tip_behavior
+    description: Recorded tip behavior for credit-card trips only.
+    columns:
+      - name: pickup_year_month
+        tests:
+          - not_null
+
+      - name: pickup_time_period
+        tests:
+          - not_null
+
+      - name: total_credit_card_trips
+        tests:
+          - not_null

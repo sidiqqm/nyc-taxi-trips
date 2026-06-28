@@ -46,3 +46,24 @@ Runtime Error
 [0m04:08:54.505797 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x713a4d054a70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x713a4c7269f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x713a4ca7d0a0>]}
 [0m04:08:54.506246 [debug] [MainThread]: Flushing usage events
 [0m04:08:56.166391 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m22:54:22.872122 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a81217a77a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a81236d5400>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a81216d8b60>]}
+
+
+============================== 22:54:22.875679 | ad03b8ef-f1e5-4c21-8305-b4471c65e931 ==============================
+[0m22:54:22.875679 [info ] [MainThread]: Running with dbt=1.11.11
+[0m22:54:22.876154 [debug] [MainThread]: running dbt with arguments {'target_path': 'None', 'fail_fast': 'False', 'version_check': 'True', 'use_colors': 'True', 'log_path': 'logs', 'indirect_selection': 'eager', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'invocation_command': 'dbt debug', 'log_cache_events': 'False', 'profiles_dir': '/home/sidiq/.dbt', 'empty': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True', 'static_parser': 'True', 'partial_parse': 'True', 'use_experimental_parser': 'False', 'debug': 'False', 'log_format': 'default', 'write_json': 'True', 'no_print': 'None', 'printer_width': '80', 'quiet': 'False', 'cache_selected_only': 'False', 'warn_error': 'None'}
+[0m22:54:22.889576 [info ] [MainThread]: dbt version: 1.11.11
+[0m22:54:22.889959 [info ] [MainThread]: python version: 3.12.3
+[0m22:54:22.890316 [info ] [MainThread]: python path: /home/sidiq/App/nyc-taxi-trip-analytics/.venv/bin/python3
+[0m22:54:22.890581 [info ] [MainThread]: os info: Linux-6.17.0-35-generic-x86_64-with-glibc2.39
+[0m22:54:23.757079 [info ] [MainThread]: Using profiles dir at /home/sidiq/.dbt
+[0m22:54:23.757450 [info ] [MainThread]: Using profiles.yml file at /home/sidiq/.dbt/profiles.yml
+[0m22:54:23.757868 [info ] [MainThread]: Using dbt_project.yml file at /home/sidiq/App/nyc-taxi-trip-analytics/dbt_project.yml
+[0m22:54:23.758313 [error] [MainThread]: Encountered an error:
+Internal Error
+  Profile should not be None if loading profile completed
+[0m22:54:23.758804 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 0.92867756, "process_in_blocks": "278920", "process_kernel_time": 0.184157, "process_mem_max_rss": "228932", "process_out_blocks": "16", "process_user_time": 3.136711}
+[0m22:54:23.759289 [debug] [MainThread]: Command `dbt debug` failed at 22:54:23.759220 after 0.93 seconds
+[0m22:54:23.759558 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a81210dd9a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a80fbb81760>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7a8100da9460>]}
+[0m22:54:23.759904 [debug] [MainThread]: Flushing usage events
+[0m22:54:24.994318 [debug] [MainThread]: An error was encountered while trying to flush usage events

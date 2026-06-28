@@ -173,3 +173,71 @@ models:
                 - Net pickup origin
                 - Net dropoff destination
                 - Balanced location role
+
+  - name: rpt_monthly_revenue_performance
+    description: Monthly gross trip amount, core fare, tip, toll, tax, surcharge, and growth analysis.
+    columns:
+      - name: pickup_year_month
+        tests:
+          - not_null
+          - unique
+
+      - name: gross_trip_amount
+        tests:
+          - not_null
+
+      - name: core_fare_amount
+        tests:
+          - not_null
+
+  - name: rpt_revenue_component_contribution
+    description: Contribution of fare, tip, tolls, taxes, and surcharges to gross trip amount.
+    columns:
+      - name: component_name
+        tests:
+          - not_null
+          - unique
+
+      - name: component_amount
+        tests:
+          - not_null
+
+  - name: rpt_revenue_time_period
+    description: Revenue performance by pickup time period.
+    columns:
+      - name: pickup_time_period
+        tests:
+          - not_null
+          - unique
+
+      - name: gross_trip_amount
+        tests:
+          - not_null
+
+  - name: rpt_rate_code_revenue_performance
+    description: Revenue and trip behavior by rate code.
+    columns:
+      - name: rate_code_id
+        tests:
+          - not_null
+          - unique
+
+      - name: gross_trip_amount
+        tests:
+          - not_null
+
+  - name: rpt_revenue_outlier_impact
+    description: Revenue comparison between upper-IQR total-amount outliers and non-outlier trips.
+    columns:
+      - name: revenue_group
+        tests:
+          - not_null
+          - unique
+          - accepted_values:
+              values:
+                - Non-revenue-outlier
+                - Revenue outlier
+
+      - name: total_trips
+        tests:
+          - not_null

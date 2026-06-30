@@ -12,7 +12,7 @@ WITH payment_location_metrics AS (
 
         COALESCE(
             p.payment_type_name,
-            f.payment_type_label,
+            f.payment_type_name,
             'Unknown'
         ) AS payment_type_name,
 
